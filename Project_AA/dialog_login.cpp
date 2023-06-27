@@ -1,5 +1,6 @@
 #include "dialog_login.h"
 #include "ui_dialog_login.h"
+#include "safheasli.h"
 #include <QDebug>
 #include <QString>
 #include <QtNetwork/QNetworkAccessManager>
@@ -21,7 +22,7 @@ Dialog_login::~Dialog_login()
 {
     delete ui;
 }
-QString Login(QString URlAcc)
+QJsonObject Login(QString URlAcc)
 {
     QUrl url(URlAcc);
 
@@ -33,14 +34,13 @@ QString Login(QString URlAcc)
     QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
     loop.exec();
 
-    QString response;
+    QJsonObject response;
     if (reply->error() == QNetworkReply::NoError)
     {
         QByteArray b = reply->readAll();
         QJsonDocument d = QJsonDocument::fromJson(b);
         QJsonObject o = d.object();
-        QString responsedata = o["code"].toString();
-        response = responsedata;
+        response = o;
     }
     else
     {
@@ -52,12 +52,23 @@ QString Login(QString URlAcc)
     return response;
 }
 
+
 void Dialog_login::on_buttonBox_accepted()
 {
     QString Name = ui->lineEdit_Username->text();
     QString Password = ui->lineEdit_Password->text();
     QString URLAccount = "http://api.barafardayebehtar.ml:8080/login?username=" + Name + "&password=" + Password;
-    QString response = Login(URLAccount);
-    qDebug() << response;
+    QJsonObject response = Login(URLAccount);
+
+    if (response["code"].toString() == "200")
+    {
+        SafheAsli *Asl = new SafheAsli(this);
+        emit SendProfile(Name, Password, response["token"].toString());
+        Asl->show();
+    }
+    else
+    {
+        emit errorlogin(response["message"].toString());
+    }
 }
 

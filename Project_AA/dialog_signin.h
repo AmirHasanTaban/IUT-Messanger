@@ -11,6 +11,7 @@ class Dialog_Signin : public QDialog
 {
     Q_OBJECT
 
+
 public:
     explicit Dialog_Signin(QWidget *parent = nullptr);
     ~Dialog_Signin();
@@ -20,6 +21,9 @@ private slots:
 
 private:
     Ui::Dialog_Signin *ui;
+
+signals:
+    void errorsignup(QString);
 };
 
 #endif // DIALOG_SIGNIN_H

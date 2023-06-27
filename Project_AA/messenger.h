@@ -19,7 +19,7 @@ public:
 private slots:
 
     void on_Signup_clicked();
-
+    void geterror(QString);
     void on_Login_clicked();
 
 private:

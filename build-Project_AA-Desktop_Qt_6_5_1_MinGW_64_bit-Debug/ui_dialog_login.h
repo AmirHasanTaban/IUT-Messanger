@@ -54,6 +54,7 @@ public:
 
         lineEdit_Password = new QLineEdit(Dialog_login);
         lineEdit_Password->setObjectName("lineEdit_Password");
+        lineEdit_Password->setEchoMode(QLineEdit::Password);
 
         verticalLayout->addWidget(lineEdit_Password);
 

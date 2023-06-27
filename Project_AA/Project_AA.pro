@@ -11,20 +11,31 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    channel.cpp \
     dialog_login.cpp \
     dialog_signin.cpp \
+    group.cpp \
     main.cpp \
-    messenger.cpp
+    messenger.cpp \
+    privatechat.cpp \
+    safheasli.cpp \
+    user.cpp
 
 HEADERS += \
+    channel.h \
     dialog_login.h \
     dialog_signin.h \
-    messenger.h
+    group.h \
+    messenger.h \
+    privatechat.h \
+    safheasli.h \
+    user.h
 
 FORMS += \
     dialog_login.ui \
     dialog_signin.ui \
-    messenger.ui
+    messenger.ui \
+    safheasli.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

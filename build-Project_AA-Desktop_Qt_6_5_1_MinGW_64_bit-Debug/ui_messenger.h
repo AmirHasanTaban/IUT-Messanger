@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -25,6 +26,7 @@ class Ui_Messenger
 public:
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
+    QLabel *label_message;
     QPushButton *Login;
     QPushButton *Signup;
     QMenuBar *menubar;
@@ -39,6 +41,11 @@ public:
         centralwidget->setObjectName("centralwidget");
         verticalLayout = new QVBoxLayout(centralwidget);
         verticalLayout->setObjectName("verticalLayout");
+        label_message = new QLabel(centralwidget);
+        label_message->setObjectName("label_message");
+
+        verticalLayout->addWidget(label_message);
+
         Login = new QPushButton(centralwidget);
         Login->setObjectName("Login");
 
@@ -66,6 +73,7 @@ public:
     void retranslateUi(QMainWindow *Messenger)
     {
         Messenger->setWindowTitle(QCoreApplication::translate("Messenger", "Messenger", nullptr));
+        label_message->setText(QString());
         Login->setText(QCoreApplication::translate("Messenger", "Log in", nullptr));
         Signup->setText(QCoreApplication::translate("Messenger", "Sign up", nullptr));
     } // retranslateUi
