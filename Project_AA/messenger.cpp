@@ -10,7 +10,7 @@ Messenger::Messenger(QWidget *parent)
     , ui(new Ui::Messenger)
 {
     ui->setupUi(this);
-    QPixmap pix("D:/Term2/AP/Project/Ap_Project/Project_AA/iut_logo.png");
+    QPixmap pix(":/source/iut_logo.png");
     ui->label->setPixmap(pix);
     this->setFixedSize(500, 500);
 }

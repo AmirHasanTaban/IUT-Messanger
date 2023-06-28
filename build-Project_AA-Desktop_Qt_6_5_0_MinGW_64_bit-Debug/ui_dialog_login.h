@@ -39,21 +39,25 @@ public:
         verticalLayout->setObjectName("verticalLayout");
         label = new QLabel(Dialog_login);
         label->setObjectName("label");
+        label->setStyleSheet(QString::fromUtf8("font: 700 12pt \"Segoe UI\";"));
 
         verticalLayout->addWidget(label);
 
         lineEdit_Username = new QLineEdit(Dialog_login);
         lineEdit_Username->setObjectName("lineEdit_Username");
+        lineEdit_Username->setStyleSheet(QString::fromUtf8("font: 12pt \"Segoe UI\";"));
 
         verticalLayout->addWidget(lineEdit_Username);
 
         label_2 = new QLabel(Dialog_login);
         label_2->setObjectName("label_2");
+        label_2->setStyleSheet(QString::fromUtf8("font: 700 12pt \"Segoe UI\";"));
 
         verticalLayout->addWidget(label_2);
 
         lineEdit_Password = new QLineEdit(Dialog_login);
         lineEdit_Password->setObjectName("lineEdit_Password");
+        lineEdit_Password->setStyleSheet(QString::fromUtf8("font: 12pt \"Segoe UI\";"));
         lineEdit_Password->setEchoMode(QLineEdit::Password);
 
         verticalLayout->addWidget(lineEdit_Password);
@@ -76,7 +80,7 @@ public:
     void retranslateUi(QDialog *Dialog_login)
     {
         Dialog_login->setWindowTitle(QCoreApplication::translate("Dialog_login", "Dialog", nullptr));
-        label->setText(QCoreApplication::translate("Dialog_login", "UserName", nullptr));
+        label->setText(QCoreApplication::translate("Dialog_login", "Username", nullptr));
         label_2->setText(QCoreApplication::translate("Dialog_login", "Password", nullptr));
     } // retranslateUi
 

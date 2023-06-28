@@ -45,6 +45,9 @@
       <height>30</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;</string>
+    </property>
     <property name="text">
      <string>Log in</string>
     </property>
@@ -57,6 +60,9 @@
       <width>170</width>
       <height>30</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;</string>
     </property>
     <property name="text">
      <string>Sign up</string>
@@ -74,11 +80,24 @@
     <property name="text">
      <string/>
     </property>
-    <property name="pixmap">
-     <pixmap>iut_logo.png</pixmap>
-    </property>
     <property name="scaledContents">
      <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>200</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Welcome to IUT Messenger</string>
     </property>
    </widget>
   </widget>

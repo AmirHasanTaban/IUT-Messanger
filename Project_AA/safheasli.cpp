@@ -53,8 +53,10 @@ SafheAsli::SafheAsli(QWidget *parent) :
     ui(new Ui::SafheAsli)
 {
     ui->setupUi(this);
-    QPixmap pix("D:/Term2/AP/Project/Ap_Project/Project_AA/send_logo.png");
+    QPixmap pix(":/source/send_logo.png");
     ui->pushButton->setIcon(pix);
+    QPixmap pix_logout(":/source/logout_icon.png");
+    ui->actionLog_out->setIcon(pix_logout);
     ui->listWidget->addItem(QString("HI"));
 
 }

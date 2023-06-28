@@ -28,6 +28,7 @@ public:
     QPushButton *Login;
     QPushButton *Signup;
     QLabel *label;
+    QLabel *label_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -47,14 +48,19 @@ public:
         Login = new QPushButton(centralwidget);
         Login->setObjectName("Login");
         Login->setGeometry(QRect(165, 300, 170, 30));
+        Login->setStyleSheet(QString::fromUtf8("font: 700 12pt \"Segoe UI\";"));
         Signup = new QPushButton(centralwidget);
         Signup->setObjectName("Signup");
         Signup->setGeometry(QRect(165, 350, 170, 30));
+        Signup->setStyleSheet(QString::fromUtf8("font: 700 12pt \"Segoe UI\";"));
         label = new QLabel(centralwidget);
         label->setObjectName("label");
         label->setGeometry(QRect(165, 20, 170, 170));
-        label->setPixmap(QPixmap(QString::fromUtf8("iut_logo.png")));
         label->setScaledContents(true);
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(150, 200, 241, 31));
+        label_2->setStyleSheet(QString::fromUtf8("font: 700 12pt \"Segoe UI\";"));
         Messenger->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Messenger);
         menubar->setObjectName("menubar");
@@ -76,6 +82,7 @@ public:
         Login->setText(QCoreApplication::translate("Messenger", "Log in", nullptr));
         Signup->setText(QCoreApplication::translate("Messenger", "Sign up", nullptr));
         label->setText(QString());
+        label_2->setText(QCoreApplication::translate("Messenger", "Welcome to IUT Messenger", nullptr));
     } // retranslateUi
 
 };

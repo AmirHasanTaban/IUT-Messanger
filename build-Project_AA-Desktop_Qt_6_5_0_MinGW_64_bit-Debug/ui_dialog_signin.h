@@ -43,41 +43,49 @@ public:
         verticalLayout->setObjectName("verticalLayout");
         label = new QLabel(Dialog_Signin);
         label->setObjectName("label");
+        label->setStyleSheet(QString::fromUtf8("font: 700 12pt \"Segoe UI\";"));
 
         verticalLayout->addWidget(label);
 
         LineEdit_UserName = new QLineEdit(Dialog_Signin);
         LineEdit_UserName->setObjectName("LineEdit_UserName");
+        LineEdit_UserName->setStyleSheet(QString::fromUtf8("font: 12pt \"Segoe UI\";"));
 
         verticalLayout->addWidget(LineEdit_UserName);
 
         label_2 = new QLabel(Dialog_Signin);
         label_2->setObjectName("label_2");
+        label_2->setStyleSheet(QString::fromUtf8("font: 700 12pt \"Segoe UI\";"));
 
         verticalLayout->addWidget(label_2);
 
         LineEdit_Password = new QLineEdit(Dialog_Signin);
         LineEdit_Password->setObjectName("LineEdit_Password");
+        LineEdit_Password->setStyleSheet(QString::fromUtf8("font: 12pt \"Segoe UI\";"));
 
         verticalLayout->addWidget(LineEdit_Password);
 
         label_3 = new QLabel(Dialog_Signin);
         label_3->setObjectName("label_3");
+        label_3->setStyleSheet(QString::fromUtf8("font: 700 12pt \"Segoe UI\";"));
 
         verticalLayout->addWidget(label_3);
 
         LineEdit_FirstName = new QLineEdit(Dialog_Signin);
         LineEdit_FirstName->setObjectName("LineEdit_FirstName");
+        LineEdit_FirstName->setStyleSheet(QString::fromUtf8("font: 12pt \"Segoe UI\";"));
 
         verticalLayout->addWidget(LineEdit_FirstName);
 
         label_4 = new QLabel(Dialog_Signin);
         label_4->setObjectName("label_4");
+        label_4->setStyleSheet(QString::fromUtf8("font: 700 12pt \"Segoe UI\";"));
 
         verticalLayout->addWidget(label_4);
 
         LineEdit_LastName = new QLineEdit(Dialog_Signin);
         LineEdit_LastName->setObjectName("LineEdit_LastName");
+        LineEdit_LastName->setStyleSheet(QString::fromUtf8("font: 12pt \"Segoe UI\";"));
 
         verticalLayout->addWidget(LineEdit_LastName);
 
@@ -99,7 +107,7 @@ public:
     void retranslateUi(QDialog *Dialog_Signin)
     {
         Dialog_Signin->setWindowTitle(QCoreApplication::translate("Dialog_Signin", "Dialog", nullptr));
-        label->setText(QCoreApplication::translate("Dialog_Signin", "user name", nullptr));
+        label->setText(QCoreApplication::translate("Dialog_Signin", "username", nullptr));
         label_2->setText(QCoreApplication::translate("Dialog_Signin", "password", nullptr));
         label_3->setText(QCoreApplication::translate("Dialog_Signin", "first name", nullptr));
         label_4->setText(QCoreApplication::translate("Dialog_Signin", "last name", nullptr));
