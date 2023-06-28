@@ -13,8 +13,6 @@ using namespace std;
 
 class User {
 private:
-    string first_name;
-    string last_name;
     string user_name;
     string password;
     string token;
@@ -27,13 +25,11 @@ private:
     }
 
 public:
-    User()
-    {
-        user_name = nullptr;
-        password = nullptr;
-        token = nullptr;
-    }
+    User();
+
     User(string user_name, string password, string token) : user_name(user_name), password(password), token(token){}
+
+    void GetProf(string user_name1, string password1, string token1);
 
     void create_group(string, string);
 

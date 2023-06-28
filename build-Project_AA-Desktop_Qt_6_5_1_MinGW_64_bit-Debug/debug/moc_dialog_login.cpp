@@ -41,17 +41,15 @@ static constexpr auto qt_meta_stringdata_CLASSDialog_loginENDCLASS = QtMocHelper
     "Dialog_login",
     "errorlogin",
     "",
-    "SendProfile",
     "on_buttonBox_accepted"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSDialog_loginENDCLASS_t {
-    uint offsetsAndSizes[10];
+    uint offsetsAndSizes[8];
     char stringdata0[13];
     char stringdata1[11];
     char stringdata2[1];
-    char stringdata3[12];
-    char stringdata4[22];
+    char stringdata3[22];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSDialog_loginENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -60,13 +58,11 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSDialog_loginENDCLASS_t qt_meta_
         QT_MOC_LITERAL(0, 12),  // "Dialog_login"
         QT_MOC_LITERAL(13, 10),  // "errorlogin"
         QT_MOC_LITERAL(24, 0),  // ""
-        QT_MOC_LITERAL(25, 11),  // "SendProfile"
-        QT_MOC_LITERAL(37, 21)   // "on_buttonBox_accepted"
+        QT_MOC_LITERAL(25, 21)   // "on_buttonBox_accepted"
     },
     "Dialog_login",
     "errorlogin",
     "",
-    "SendProfile",
     "on_buttonBox_accepted"
 };
 #undef QT_MOC_LITERAL
@@ -79,23 +75,21 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSDialog_loginENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       2,       // signalCount
+       1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   32,    2, 0x06,    1 /* Public */,
-       3,    3,   35,    2, 0x06,    3 /* Public */,
+       1,    1,   26,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    0,   42,    2, 0x08,    7 /* Private */,
+       3,    0,   29,    2, 0x08,    3 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,    2,    2,    2,
 
  // slots: parameters
     QMetaType::Void,
@@ -115,11 +109,6 @@ Q_CONSTINIT const QMetaObject Dialog_login::staticMetaObject = { {
         // method 'errorlogin'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
-        // method 'SendProfile'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
         // method 'on_buttonBox_accepted'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
@@ -133,8 +122,7 @@ void Dialog_login::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         (void)_t;
         switch (_id) {
         case 0: _t->errorlogin((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 1: _t->SendProfile((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3]))); break;
-        case 2: _t->on_buttonBox_accepted(); break;
+        case 1: _t->on_buttonBox_accepted(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -143,13 +131,6 @@ void Dialog_login::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
             using _t = void (Dialog_login::*)(QString );
             if (_t _q_method = &Dialog_login::errorlogin; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
-                return;
-            }
-        }
-        {
-            using _t = void (Dialog_login::*)(QString , QString , QString );
-            if (_t _q_method = &Dialog_login::SendProfile; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
-                *result = 1;
                 return;
             }
         }
@@ -175,13 +156,13 @@ int Dialog_login::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 2)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 2;
     }
     return _id;
 }
@@ -191,12 +172,5 @@ void Dialog_login::errorlogin(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
-}
-
-// SIGNAL 1
-void Dialog_login::SendProfile(QString _t1, QString _t2, QString _t3)
-{
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
-    QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 QT_WARNING_POP

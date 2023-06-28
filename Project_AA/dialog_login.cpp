@@ -10,6 +10,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QFile>
+#include "messenger.h"
 
 Dialog_login::Dialog_login(QWidget *parent) :
     QDialog(parent),
@@ -59,11 +60,15 @@ void Dialog_login::on_buttonBox_accepted()
     QString Password = ui->lineEdit_Password->text();
     QString URLAccount = "http://api.barafardayebehtar.ml:8080/login?username=" + Name + "&password=" + Password;
     QJsonObject response = Login(URLAccount);
+    response["Name"] = Name;
+    response["Password"] = Password;
+
+    qDebug() << response["code"].toString();
 
     if (response["code"].toString() == "200")
     {
         SafheAsli *Asl = new SafheAsli(this);
-        emit SendProfile(Name, Password, response["token"].toString());
+        Asl->setName(response);
         Asl->show();
     }
     else

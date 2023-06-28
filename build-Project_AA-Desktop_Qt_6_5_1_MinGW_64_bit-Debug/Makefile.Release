@@ -793,6 +793,25 @@ release/moc_safheasli.cpp: ../Project_AA/safheasli.h \
 		../../QT/6.5.1/mingw_64/include/QtGui/QTransform \
 		../../QT/6.5.1/mingw_64/include/QtCore/qnativeinterface.h \
 		../../QT/6.5.1/mingw_64/include/QtWidgets/qtabwidget.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/QListWidgetItem \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qlistwidget.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qlistview.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractitemview.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qframe.h \
+		../../QT/6.5.1/mingw_64/include/QtCore/qabstractitemmodel.h \
+		../../QT/6.5.1/mingw_64/include/QtCore/qitemselectionmodel.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qstyleoption.h \
+		../../QT/6.5.1/mingw_64/include/QtCore/qlocale.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		../../QT/6.5.1/mingw_64/include/QtGui/qvalidator.h \
+		../../QT/6.5.1/mingw_64/include/QtCore/qregularexpression.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qslider.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractslider.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qstyle.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qtabbar.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qrubberband.h \
 		release/moc_predefs.h \
 		../../QT/6.5.1/mingw_64/bin/moc.exe
 	E:\QT\6.5.1\mingw_64\bin\moc.exe $(DEFINES) --include "E:/Qt code/build-Project_AA-Desktop_Qt_6_5_1_MinGW_64_bit-Debug/release/moc_predefs.h" -IE:/QT/6.5.1/mingw_64/mkspecs/win32-g++ -I"E:/Qt code/Project_AA" -IE:/QT/6.5.1/mingw_64/include -IE:/QT/6.5.1/mingw_64/include/QtWidgets -IE:/QT/6.5.1/mingw_64/include/QtGui -IE:/QT/6.5.1/mingw_64/include/QtNetwork -IE:/QT/6.5.1/mingw_64/include/QtCore -I. -IE:/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IE:/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IE:/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IE:/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IE:/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IE:/QT/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Project_AA\safheasli.h -o release\moc_safheasli.cpp
@@ -995,53 +1014,29 @@ release/dialog_login.o: ../Project_AA/dialog_login.cpp ../Project_AA/dialog_logi
 		../../QT/6.5.1/mingw_64/include/QtGui/QTransform \
 		../../QT/6.5.1/mingw_64/include/QtCore/qnativeinterface.h \
 		ui_dialog_login.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/QVariant \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QAbstractButton \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QApplication \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qapplication.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qcoreapplication.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qeventloop.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qfuture.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qfutureinterface.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qmutex.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qtsan_impl.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qresultstore.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qfuture_impl.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qthreadpool.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qthread.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qrunnable.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qexception.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qpromise.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qguiapplication.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qinputmethod.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qlocale.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QDialogButtonBox \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QLabel \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qlabel.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qframe.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qpicture.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qtextdocument.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QLineEdit \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qlineedit.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qtextcursor.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qtextformat.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qpen.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qtextoption.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QVBoxLayout \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qlayout.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qgridlayout.h \
 		../Project_AA/safheasli.h \
 		../../QT/6.5.1/mingw_64/include/QtWidgets/QMainWindow \
 		../../QT/6.5.1/mingw_64/include/QtWidgets/qmainwindow.h \
 		../../QT/6.5.1/mingw_64/include/QtWidgets/qtabwidget.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/QListWidgetItem \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qlistwidget.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qlistview.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractitemview.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qframe.h \
+		../../QT/6.5.1/mingw_64/include/QtCore/qabstractitemmodel.h \
+		../../QT/6.5.1/mingw_64/include/QtCore/qitemselectionmodel.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qstyleoption.h \
+		../../QT/6.5.1/mingw_64/include/QtCore/qlocale.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		../../QT/6.5.1/mingw_64/include/QtGui/qvalidator.h \
+		../../QT/6.5.1/mingw_64/include/QtCore/qregularexpression.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qslider.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractslider.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qstyle.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qtabbar.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qrubberband.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/QDebug \
 		../../QT/6.5.1/mingw_64/include/QtCore/QString \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/QNetworkAccessManager \
@@ -1052,6 +1047,7 @@ release/dialog_login.o: ../Project_AA/dialog_login.cpp ../Project_AA/dialog_logi
 		../../QT/6.5.1/mingw_64/include/QtNetwork/qnetworkrequest.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/QSharedDataPointer \
 		../../QT/6.5.1/mingw_64/include/QtCore/QUrl \
+		../../QT/6.5.1/mingw_64/include/QtCore/QVariant \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/QSslConfiguration \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/qsslconfiguration.h \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/qsslsocket.h \
@@ -1077,7 +1073,6 @@ release/dialog_login.o: ../Project_AA/dialog_login.cpp ../Project_AA/dialog_logi
 		../../QT/6.5.1/mingw_64/include/QtCore/qjsonvalue.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/qcborvalue.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/qcborcommon.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qregularexpression.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/quuid.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/QJsonArray \
 		../../QT/6.5.1/mingw_64/include/QtCore/qjsonarray.h \
@@ -1248,49 +1243,6 @@ release/dialog_signin.o: ../Project_AA/dialog_signin.cpp ../Project_AA/dialog_si
 		../../QT/6.5.1/mingw_64/include/QtGui/QTransform \
 		../../QT/6.5.1/mingw_64/include/QtCore/qnativeinterface.h \
 		ui_dialog_signin.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/QVariant \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QAbstractButton \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QApplication \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qapplication.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qcoreapplication.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qeventloop.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qfuture.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qfutureinterface.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qmutex.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qtsan_impl.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qresultstore.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qfuture_impl.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qthreadpool.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qthread.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qrunnable.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qexception.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qpromise.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qguiapplication.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qinputmethod.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qlocale.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QDialogButtonBox \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QLabel \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qlabel.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qframe.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qpicture.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qtextdocument.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QLineEdit \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qlineedit.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qtextcursor.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qtextformat.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qpen.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qtextoption.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QVBoxLayout \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qlayout.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qgridlayout.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/QDebug \
 		../../QT/6.5.1/mingw_64/include/QtCore/QString \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/QNetworkAccessManager \
@@ -1301,6 +1253,7 @@ release/dialog_signin.o: ../Project_AA/dialog_signin.cpp ../Project_AA/dialog_si
 		../../QT/6.5.1/mingw_64/include/QtNetwork/qnetworkrequest.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/QSharedDataPointer \
 		../../QT/6.5.1/mingw_64/include/QtCore/QUrl \
+		../../QT/6.5.1/mingw_64/include/QtCore/QVariant \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/QSslConfiguration \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/qsslconfiguration.h \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/qsslsocket.h \
@@ -1312,6 +1265,7 @@ release/dialog_signin.o: ../Project_AA/dialog_signin.cpp ../Project_AA/dialog_si
 		../../QT/6.5.1/mingw_64/include/QtCore/qcryptographichash.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/qdatetime.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/qcalendar.h \
+		../../QT/6.5.1/mingw_64/include/QtCore/qlocale.h \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/qssl.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/QFlags \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
@@ -1687,48 +1641,6 @@ release/messenger.o: ../Project_AA/messenger.cpp ../Project_AA/messenger.h \
 		../../QT/6.5.1/mingw_64/include/QtWidgets/qtabwidget.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/QUrl \
 		ui_messenger.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/QVariant \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QApplication \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qapplication.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qcoreapplication.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qeventloop.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qfuture.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qfutureinterface.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qmutex.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qtsan_impl.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qresultstore.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qfuture_impl.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qthreadpool.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qthread.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qrunnable.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qexception.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qpromise.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qguiapplication.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qinputmethod.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qlocale.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QLabel \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qlabel.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qframe.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qpicture.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qtextdocument.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QMenuBar \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qmenubar.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qmenu.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QPushButton \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QStatusBar \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qstatusbar.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QVBoxLayout \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qlayout.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QWidget \
 		../Project_AA/dialog_signin.h \
 		../../QT/6.5.1/mingw_64/include/QtWidgets/QDialog \
 		../../QT/6.5.1/mingw_64/include/QtWidgets/qdialog.h \
@@ -1898,38 +1810,29 @@ release/safheasli.o: ../Project_AA/safheasli.cpp ../Project_AA/safheasli.h \
 		../../QT/6.5.1/mingw_64/include/QtGui/QTransform \
 		../../QT/6.5.1/mingw_64/include/QtCore/qnativeinterface.h \
 		../../QT/6.5.1/mingw_64/include/QtWidgets/qtabwidget.h \
-		ui_safheasli.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/QVariant \
-		../../QT/6.5.1/mingw_64/include/QtGui/QAction \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QApplication \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qapplication.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qcoreapplication.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qeventloop.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qfuture.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qfutureinterface.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qmutex.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qtsan_impl.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qresultstore.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qfuture_impl.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qthreadpool.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qthread.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qrunnable.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qexception.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qpromise.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qguiapplication.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qinputmethod.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/QListWidgetItem \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qlistwidget.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qlistview.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractitemview.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qframe.h \
+		../../QT/6.5.1/mingw_64/include/QtCore/qabstractitemmodel.h \
+		../../QT/6.5.1/mingw_64/include/QtCore/qitemselectionmodel.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qstyleoption.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/qlocale.h \
-		../../QT/6.5.1/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QMenu \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qmenu.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QMenuBar \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qmenubar.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QStatusBar \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/qstatusbar.h \
-		../../QT/6.5.1/mingw_64/include/QtWidgets/QWidget \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		../../QT/6.5.1/mingw_64/include/QtGui/qvalidator.h \
+		../../QT/6.5.1/mingw_64/include/QtCore/qregularexpression.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qslider.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qabstractslider.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qstyle.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qtabbar.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qrubberband.h \
+		ui_safheasli.h \
+		../Project_AA/dialog_login.h \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/QDialog \
+		../../QT/6.5.1/mingw_64/include/QtWidgets/qdialog.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/QDebug \
 		../../QT/6.5.1/mingw_64/include/QtCore/QString \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/QNetworkAccessManager \
@@ -1940,6 +1843,7 @@ release/safheasli.o: ../Project_AA/safheasli.cpp ../Project_AA/safheasli.h \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/qnetworkrequest.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/QSharedDataPointer \
 		../../QT/6.5.1/mingw_64/include/QtCore/QUrl \
+		../../QT/6.5.1/mingw_64/include/QtCore/QVariant \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/QSslConfiguration \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/qsslconfiguration.h \
 		../../QT/6.5.1/mingw_64/include/QtNetwork/qsslsocket.h \
@@ -1965,7 +1869,6 @@ release/safheasli.o: ../Project_AA/safheasli.cpp ../Project_AA/safheasli.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/qjsonvalue.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/qcborvalue.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/qcborcommon.h \
-		../../QT/6.5.1/mingw_64/include/QtCore/qregularexpression.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/quuid.h \
 		../../QT/6.5.1/mingw_64/include/QtCore/QJsonArray \
 		../../QT/6.5.1/mingw_64/include/QtCore/qjsonarray.h \

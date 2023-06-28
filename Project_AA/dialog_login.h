@@ -23,7 +23,6 @@ private:
 
 signals:
     void errorlogin(QString);
-    void SendProfile(QString, QString, QString);
 };
 
 #endif // DIALOG_LOGIN_H

@@ -77,3 +77,11 @@ void User::create_chat(string dst_username) {
 //    PrivateChat privatechat(dst_username);
 
 }
+
+void User::GetProf(string user_name1, string password1, string token1)
+{
+    user_name = user_name1;
+    password = password1;
+    token = token1;
+}
+
