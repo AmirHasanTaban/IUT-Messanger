@@ -11,7 +11,9 @@
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
@@ -37,6 +39,7 @@ public:
     QPushButton *pushButton;
     QLineEdit *lineEdit_asli;
     QWidget *page_2;
+    QFrame *line;
     QMenuBar *menubar;
     QMenu *menuoptions;
     QStatusBar *statusbar;
@@ -62,21 +65,34 @@ public:
         page->setObjectName("page");
         textBrowser_asli = new QTextBrowser(page);
         textBrowser_asli->setObjectName("textBrowser_asli");
-        textBrowser_asli->setGeometry(QRect(130, 60, 411, 391));
+        textBrowser_asli->setGeometry(QRect(10, 0, 581, 491));
+        textBrowser_asli->setFrameShape(QFrame::Panel);
+        textBrowser_asli->setFrameShadow(QFrame::Plain);
+        textBrowser_asli->setLineWidth(3);
+        textBrowser_asli->setMidLineWidth(0);
         pushButton = new QPushButton(page);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(522, 488, 71, 41));
+        pushButton->setGeometry(QRect(549, 520, 41, 40));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8("send_logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton->setIcon(icon);
+        pushButton->setIconSize(QSize(30, 30));
         lineEdit_asli = new QLineEdit(page);
         lineEdit_asli->setObjectName("lineEdit_asli");
-        lineEdit_asli->setGeometry(QRect(230, 490, 281, 41));
+        lineEdit_asli->setGeometry(QRect(10, 520, 541, 41));
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName("page_2");
         stackedWidget->addWidget(page_2);
+        line = new QFrame(centralwidget);
+        line->setObjectName("line");
+        line->setGeometry(QRect(190, 0, 20, 561));
+        line->setFrameShape(QFrame::VLine);
+        line->setFrameShadow(QFrame::Sunken);
         SafheAsli->setCentralWidget(centralwidget);
         menubar = new QMenuBar(SafheAsli);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 26));
+        menubar->setGeometry(QRect(0, 0, 800, 19));
         menuoptions = new QMenu(menubar);
         menuoptions->setObjectName("menuoptions");
         SafheAsli->setMenuBar(menubar);
@@ -114,7 +130,7 @@ public:
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">hi</p>\n"
 "<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">hi</p></body></html>", nullptr));
-        pushButton->setText(QCoreApplication::translate("SafheAsli", "Send", nullptr));
+        pushButton->setText(QString());
         menuoptions->setTitle(QCoreApplication::translate("SafheAsli", "options", nullptr));
     } // retranslateUi
 

@@ -12,6 +12,7 @@
 #include <QJsonDocument>
 #include <QFile>
 #include <QListWidgetItem>
+#include <QPixmap>
 
 QJsonObject logout1(QString URlAcc)
 {
@@ -52,7 +53,8 @@ SafheAsli::SafheAsli(QWidget *parent) :
     ui(new Ui::SafheAsli)
 {
     ui->setupUi(this);
-
+    QPixmap pix("D:/Term2/AP/Project/Ap_Project/Project_AA/send_logo.png");
+    ui->pushButton->setIcon(pix);
     ui->listWidget->addItem(QString("HI"));
 
 }

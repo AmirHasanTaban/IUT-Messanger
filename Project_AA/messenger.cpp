@@ -3,6 +3,8 @@
 #include "dialog_signin.h"
 #include "dialog_login.h"
 #include <QPixmap>
+#include <QMessageBox>
+
 Messenger::Messenger(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Messenger)
@@ -29,6 +31,8 @@ void Messenger::on_Signup_clicked()
 void Messenger::geterror(QString str)
 {
     ui->label_message->setText(str);
+    QMessageBox::warning(this, "Error", str);
+
 }
 
 
