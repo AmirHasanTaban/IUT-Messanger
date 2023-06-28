@@ -1,0 +1,13 @@
+debug/channel.o
+debug/dialog_login.o
+debug/dialog_signin.o
+debug/group.o
+debug/main.o
+debug/messenger.o
+debug/privatechat.o
+debug/safheasli.o
+debug/user.o
+debug/moc_dialog_login.o
+debug/moc_dialog_signin.o
+debug/moc_messenger.o
+debug/moc_safheasli.o

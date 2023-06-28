@@ -2,12 +2,15 @@
 #include "ui_messenger.h"
 #include "dialog_signin.h"
 #include "dialog_login.h"
-
+#include <QPixmap>
 Messenger::Messenger(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Messenger)
 {
     ui->setupUi(this);
+    QPixmap pix("D:/Term2/AP/Project/Ap_Project/Project_AA/iut_logo.png");
+    ui->label->setPixmap(pix);
+    this->setFixedSize(500, 500);
 }
 
 Messenger::~Messenger()

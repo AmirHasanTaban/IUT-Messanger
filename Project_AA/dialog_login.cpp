@@ -17,6 +17,7 @@ Dialog_login::Dialog_login(QWidget *parent) :
     ui(new Ui::Dialog_login)
 {
     ui->setupUi(this);
+    this->setFixedSize(500, 500);
 }
 
 Dialog_login::~Dialog_login()
