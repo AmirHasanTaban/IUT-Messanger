@@ -79,6 +79,37 @@ QJsonObject getchannellist(QString url1) {
     return response;
 }
 
+QJsonObject SafheAsli::send_request(QString URlAcc)
+{
+    QUrl url(URlAcc);
+
+    QNetworkAccessManager Manager;
+    QNetworkRequest request;
+    request.setUrl(url);
+    QNetworkReply *reply = Manager.get(request);
+    QEventLoop loop;
+    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
+
+    QJsonObject jj;
+    if (reply->error() == QNetworkReply::NoError)
+    {
+        QByteArray b = reply->readAll();
+        QJsonDocument d = QJsonDocument::fromJson(b);
+        QJsonObject o = d.object();
+        jj = o;
+    }
+    else
+    {
+        qDebug() << "Error:" << reply->errorString();
+    }
+
+    reply->deleteLater();
+
+    return jj;
+}
+
+
 void logout1(QString URlAcc)
 {
     QUrl url(URlAcc);
@@ -119,6 +150,8 @@ void SafheAsli::setName(QJsonObject Nam)
     QJsonObject jg =getgrouplist(ug);
     QJsonObject jc =getchannellist(uc);
 
+    qDebug () << ju;
+
 }
 
 
@@ -130,6 +163,13 @@ SafheAsli::SafheAsli(QWidget *parent) :
     ui(new Ui::SafheAsli)
 {
     ui->setupUi(this);
+    setFixedSize(800, 600);
+    QPixmap pix1(":/source/send_logo.png");
+    ui->pushButton->setIcon(pix1);
+    QPixmap pix2(":/source/logout_icon.png");
+    ui->actionLog_out->setIcon(pix2);
+    QPixmap pix3(":/source/burger_icon.png");
+    ui->menuoptions->setIcon(pix3);
 }
 
 SafheAsli::~SafheAsli()
@@ -141,7 +181,7 @@ void SafheAsli::on_actionLog_out_triggered()
 {
     QString name11 = json["Name"].toString();
     QString pass11 = json["Password"].toString();
-    qDebug() << json;
+//    qDebug() << json;
     QString url = "http://api.barafardayebehtar.ml:8080/logout?username=" + name11 + "&password=" + pass11;
     logout1(url);
     close();
@@ -152,10 +192,17 @@ void SafheAsli::on_pushButton_clicked()
 {
     QString str = ui->lineEdit_asli->text();
     str.append("\n");
-    QString message = QString("<span style=\"color: red;\">");
-    message.append(str);
-    message.append(QString("</span><br>"));
+//    QString message = QString("<span style=\"color: red;\">");
+//    message.append(str);
+//    message.append(QString("</span><br>"));
+    QString message = QString("Me:\n")+str;
     ui->textBrowser_asli->append(message);
+//    QString dst_username;
+    QString tmp = json["token"].toString();
+    QString url = "http://api.barafardayebehtar.ml:8080/sendmessageuser?token="+tmp+"&dst="+dst_username+"&body="+str;
+
+    QJsonObject ans = send_request(url);
+//    qDebug() << ans["message"] << ans["code"];
 
     ui->lineEdit_asli->clear();
 }
@@ -163,15 +210,20 @@ void SafheAsli::on_pushButton_clicked()
 
 void SafheAsli::on_listWidget_itemClicked(QListWidgetItem *item)
 {
-    if(item->text()==QString("Mammad")){
-        ui->textBrowser_asli->setText(QString("Hello Buddy!\nHow are you?\nWhat's up?\n"));
-    }
-    else if(item->text()==QString("Javadi")){
-        ui->textBrowser_asli->setText(QString("Legends never die!\nDid you know that?!\n"));
-    }
-    else{
+    dst_username = item->text();
+//    qDebug() << dst_username;
+    QString tmp = json["token"].toString();
 
-        ui->textBrowser_asli->clear();
-    }
+
+    QString url = "http://api.barafardayebehtar.ml:8080/getuserchats?token="+tmp;
+
+    QJsonObject ans = send_request(url);
+
+
+
+//    if(item->text()==QString("Mammad")){
+//        ui->textBrowser_asli->setText(QString("Hello Buddy!\nHow are you?\nWhat's up?\n"));
+//    }
+
 }
 

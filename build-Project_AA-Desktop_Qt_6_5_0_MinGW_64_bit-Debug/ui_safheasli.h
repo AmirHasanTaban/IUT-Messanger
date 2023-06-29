@@ -11,9 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
-#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFrame>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
@@ -39,7 +37,6 @@ public:
     QPushButton *pushButton;
     QLineEdit *lineEdit_asli;
     QWidget *page_2;
-    QFrame *line;
     QMenuBar *menubar;
     QMenu *menuoptions;
     QStatusBar *statusbar;
@@ -49,57 +46,39 @@ public:
         if (SafheAsli->objectName().isEmpty())
             SafheAsli->setObjectName("SafheAsli");
         SafheAsli->resize(800, 600);
-        SafheAsli->setStyleSheet(QString::fromUtf8("background-color: rgb(246, 246, 246);"));
+        SafheAsli->setStyleSheet(QString::fromUtf8("background-color: rgb(250, 250, 250);"));
         actionLog_out = new QAction(SafheAsli);
         actionLog_out->setObjectName("actionLog_out");
-        QIcon icon;
-        icon.addFile(QString::fromUtf8("logout_icon.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionLog_out->setIcon(icon);
         centralwidget = new QWidget(SafheAsli);
         centralwidget->setObjectName("centralwidget");
         listWidget = new QListWidget(centralwidget);
-        QBrush brush(QColor(255, 170, 127, 255));
-        brush.setStyle(Qt::NoBrush);
-        QListWidgetItem *__qlistwidgetitem = new QListWidgetItem(listWidget);
-        __qlistwidgetitem->setBackground(brush);
+        new QListWidgetItem(listWidget);
         new QListWidgetItem(listWidget);
         listWidget->setObjectName("listWidget");
-        listWidget->setGeometry(QRect(0, 0, 200, 600));
-        listWidget->setStyleSheet(QString::fromUtf8("font: 12pt \"Segoe UI\";\n"
-"background-color: rgb(199, 199, 199);"));
+        listWidget->setGeometry(QRect(5, 0, 200, 550));
+        listWidget->setFrameShape(QFrame::Box);
+        listWidget->setFrameShadow(QFrame::Plain);
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName("stackedWidget");
-        stackedWidget->setGeometry(QRect(200, 0, 600, 600));
+        stackedWidget->setGeometry(QRect(219, 0, 581, 600));
         page = new QWidget();
         page->setObjectName("page");
         textBrowser_asli = new QTextBrowser(page);
         textBrowser_asli->setObjectName("textBrowser_asli");
-        textBrowser_asli->setGeometry(QRect(10, 0, 581, 491));
-        textBrowser_asli->setStyleSheet(QString::fromUtf8("font: 18pt \"8514oem\";"));
-        textBrowser_asli->setFrameShape(QFrame::Panel);
+        textBrowser_asli->setGeometry(QRect(30, 0, 525, 500));
+        textBrowser_asli->setFrameShape(QFrame::Box);
         textBrowser_asli->setFrameShadow(QFrame::Plain);
         textBrowser_asli->setLineWidth(3);
-        textBrowser_asli->setMidLineWidth(0);
         pushButton = new QPushButton(page);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(549, 510, 41, 41));
-        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(170, 255, 255);"));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8("send_logo.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton->setIcon(icon1);
-        pushButton->setIconSize(QSize(30, 30));
+        pushButton->setGeometry(QRect(510, 510, 61, 41));
         lineEdit_asli = new QLineEdit(page);
         lineEdit_asli->setObjectName("lineEdit_asli");
-        lineEdit_asli->setGeometry(QRect(10, 510, 541, 41));
+        lineEdit_asli->setGeometry(QRect(30, 510, 481, 41));
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName("page_2");
         stackedWidget->addWidget(page_2);
-        line = new QFrame(centralwidget);
-        line->setObjectName("line");
-        line->setGeometry(QRect(190, 0, 20, 561));
-        line->setFrameShape(QFrame::VLine);
-        line->setFrameShadow(QFrame::Sunken);
         SafheAsli->setCentralWidget(centralwidget);
         menubar = new QMenuBar(SafheAsli);
         menubar->setObjectName("menubar");
@@ -138,9 +117,9 @@ public:
 "hr { height: 1px; border-width: 0; }\n"
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'8514oem'; font-size:18pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:9pt;\"><br /></p></body></html>", nullptr));
-        pushButton->setText(QString());
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
+        pushButton->setText(QCoreApplication::translate("SafheAsli", "Send", nullptr));
         menuoptions->setTitle(QCoreApplication::translate("SafheAsli", "options", nullptr));
     } // retranslateUi
 

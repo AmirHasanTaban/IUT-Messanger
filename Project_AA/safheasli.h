@@ -17,8 +17,9 @@ class SafheAsli : public QMainWindow
 
 public:
 
+    QJsonObject send_request(QString url);
     void logout(QString URlAcc);
-
+    QString dst_username;
     void setName(QJsonObject jo);
     explicit SafheAsli(QWidget *parent = nullptr);
     ~SafheAsli();

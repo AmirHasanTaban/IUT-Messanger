@@ -3,5 +3,6 @@
         <file>iut_logo.png</file>
         <file>logout_icon.png</file>
         <file>send_logo.png</file>
+        <file>burger_icon.png</file>
     </qresource>
 </RCC>
