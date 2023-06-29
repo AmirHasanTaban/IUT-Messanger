@@ -17,6 +17,12 @@ class SafheAsli : public QMainWindow
 
 public:
 
+    void PrintUser(int num, QJsonObject q);
+    void PrintGroup(int num, QJsonObject q);
+    void PrintChannel(int num, QJsonObject q);
+
+    void TY();
+
     QJsonObject send_request(QString url);
     void logout(QString URlAcc);
     QString dst_username;

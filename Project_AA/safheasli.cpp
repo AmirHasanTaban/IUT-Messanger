@@ -13,6 +13,8 @@
 #include <QFile>
 #include <QListWidgetItem>
 
+QJsonObject jsonasl, jsonU1, jsonG1, jsonC1;
+
 QJsonObject getuserlist(QString url1) {
     QNetworkAccessManager manager;
     QNetworkReply *reply = manager.get(QNetworkRequest(QUrl(url1)));
@@ -109,6 +111,107 @@ QJsonObject SafheAsli::send_request(QString URlAcc)
     return jj;
 }
 
+QString FindNumber(QJsonObject j)
+{
+    QString mes = j["message"].toString();
+    int hyphenStart = mes.indexOf('-');
+    int hyphenEnd = mes.lastIndexOf('-');
+
+    QString numberStr = mes.mid(hyphenStart + 1, hyphenEnd - hyphenStart - 1);
+
+    return numberStr;
+}
+
+
+void SafheAsli::PrintUser(int num, QJsonObject q)
+{
+    for (int i = 0; i < num; i++)
+    {
+        int myInt = i;
+        QString qq = QString::number(myInt);
+        QString block = "block " + qq;
+        QJsonObject val = q[block].toObject();
+        QString nam = val["src"].toString();
+        ui->listWidget->addItem(nam);
+    }
+}
+
+void SafheAsli::PrintGroup(int num, QJsonObject q)
+{
+    for (int i = 0; i < num; i++)
+    {
+        int myInt = i;
+        QString qq = QString::number(myInt);
+        QString block = "block " + qq;
+        QJsonObject val = q[block].toObject();
+        QString nam = val["group_name"].toString();
+        qDebug() << nam;
+        ui->listWidget->addItem(nam);
+    }
+}
+
+void SafheAsli::PrintChannel(int num, QJsonObject q)
+{
+    for (int i = 0; i < num; i++)
+    {
+        int myInt = i;
+        QString qq = QString::number(myInt);
+        QString block = "block " + qq;
+        QJsonObject val = q[block].toObject();
+        QString nam = val["channel_name"].toString();
+        ui->listWidget->addItem(nam);
+    }
+}
+
+void SafheAsli::TY()
+{
+    QString ur1 = jsonasl["token"].toString();
+
+    QString uj = "http://api.barafardayebehtar.ml:8080/getuserlist?token=" + ur1;
+    QString ug = "http://api.barafardayebehtar.ml:8080/getgrouplist?token=" + ur1;
+    QString uc = "http://api.barafardayebehtar.ml:8080/getchannellist?token=" + ur1;
+
+    QJsonObject ju =getuserlist(uj);
+    QJsonObject jg =getgrouplist(ug);
+    QJsonObject jc =getchannellist(uc);
+
+    QString number_Suser = FindNumber(ju);
+    QString number_Sgroup = FindNumber(jg);
+    QString number_Schanell = FindNumber(jc);
+
+    int number_Iuser = number_Suser.toInt();
+    int number_Igroup = number_Sgroup.toInt();
+    int number_Ichanell = number_Schanell.toInt();
+
+    QString number_SuserFirst = FindNumber(jsonU1);
+    QString number_SgroupFirst = FindNumber(jsonG1);
+    QString number_SchanellFirst = FindNumber(jsonC1);
+
+    int number_IuserFirst = number_SuserFirst.toInt();
+    int number_IgroupFirst = number_SgroupFirst.toInt();
+    int number_IchanellFirst = number_SchanellFirst.toInt();
+
+    if (number_Iuser != number_IuserFirst)
+    {
+
+    }
+
+    if (number_Igroup != number_IgroupFirst)
+    {
+
+    }
+
+    if (number_Ichanell != number_IchanellFirst)
+    {
+
+    }
+
+
+    //    PrintUser(number_Iuser, ju);
+    //    PrintGroup(number_Igroup, jg);
+    //    PrintChannel(number_Ichanell, jc);
+}
+
 
 void logout1(QString URlAcc)
 {
@@ -143,15 +246,30 @@ void SafheAsli::setName(QJsonObject Nam)
 {
     json = Nam;
     ur1 = json["token"].toString();
+    jsonasl = json;
+
     QString uj = "http://api.barafardayebehtar.ml:8080/getuserlist?token=" + ur1;
-    QString ug = "http://api.barafardayebehtar.ml:8080/getchannellist?token=" + ur1;
-    QString uc = "http://api.barafardayebehtar.ml:8080/getgrouplist?token=" + ur1;
+    QString ug = "http://api.barafardayebehtar.ml:8080/getgrouplist?token=" + ur1;
+    QString uc = "http://api.barafardayebehtar.ml:8080/getchannellist?token=" + ur1;
+
     QJsonObject ju =getuserlist(uj);
+    jsonU1 = ju;
     QJsonObject jg =getgrouplist(ug);
+    jsonG1 = jg;
     QJsonObject jc =getchannellist(uc);
+    jsonC1 = jc;
 
-    qDebug () << ju;
+    QString number_Suser = FindNumber(ju);
+    QString number_Sgroup = FindNumber(jg);
+    QString number_Schanell = FindNumber(jc);
 
+    int number_Iuser = number_Suser.toInt();
+    int number_Igroup = number_Sgroup.toInt();
+    int number_Ichanell = number_Schanell.toInt();
+
+    PrintUser(number_Iuser, ju);
+    PrintGroup(number_Igroup, jg);
+    PrintChannel(number_Ichanell, jc);
 }
 
 
