@@ -12,7 +12,72 @@
 #include <QJsonDocument>
 #include <QFile>
 #include <QListWidgetItem>
-#include <QPixmap>
+
+QJsonObject getuserlist(QString url1) {
+    QNetworkAccessManager manager;
+    QNetworkReply *reply = manager.get(QNetworkRequest(QUrl(url1)));
+
+    QEventLoop eventLoop;
+    QObject::connect(reply, &QNetworkReply::finished, &eventLoop, &QEventLoop::quit);
+    eventLoop.exec();
+
+    QJsonObject response;
+    if (reply->error() == QNetworkReply::NoError) {
+        QByteArray b = reply->readAll();
+        QJsonDocument d = QJsonDocument::fromJson(b);
+        QJsonObject o = d.object();
+        response = o;
+        qDebug() << response;
+    } else {
+        qDebug() << "Error: " << reply->errorString();
+        return QJsonObject();
+    }
+    return response;
+}
+
+QJsonObject getgrouplist(QString url1) {
+    QNetworkAccessManager manager;
+    QNetworkReply *reply = manager.get(QNetworkRequest(QUrl(url1)));
+
+    QEventLoop eventLoop;
+    QObject::connect(reply, &QNetworkReply::finished, &eventLoop, &QEventLoop::quit);
+    eventLoop.exec();
+
+    QJsonObject response;
+    if (reply->error() == QNetworkReply::NoError) {
+        QByteArray b = reply->readAll();
+        QJsonDocument d = QJsonDocument::fromJson(b);
+        QJsonObject o = d.object();
+        response = o;
+        qDebug() << response;
+    } else {
+        qDebug() << "Error: " << reply->errorString();
+        return QJsonObject();
+    }
+    return response;
+}
+
+QJsonObject getchannellist(QString url1) {
+    QNetworkAccessManager manager;
+    QNetworkReply *reply = manager.get(QNetworkRequest(QUrl(url1)));
+
+    QEventLoop eventLoop;
+    QObject::connect(reply, &QNetworkReply::finished, &eventLoop, &QEventLoop::quit);
+    eventLoop.exec();
+
+    QJsonObject response;
+    if (reply->error() == QNetworkReply::NoError) {
+        QByteArray b = reply->readAll();
+        QJsonDocument d = QJsonDocument::fromJson(b);
+        QJsonObject o = d.object();
+        response = o;
+        qDebug() << response;
+    } else {
+        qDebug() << "Error: " << reply->errorString();
+        return QJsonObject();
+    }
+    return response;
+}
 
 void logout1(QString URlAcc)
 {
@@ -42,23 +107,30 @@ void logout1(QString URlAcc)
     reply->deleteLater();
 }
 
+QString ur1;
 void SafheAsli::setName(QJsonObject Nam)
 {
     json = Nam;
+    ur1 = json["token"].toString();
+    QString uj = "http://api.barafardayebehtar.ml:8080/getuserlist?token=" + ur1;
+    QString ug = "http://api.barafardayebehtar.ml:8080/getchannellist?token=" + ur1;
+    QString uc = "http://api.barafardayebehtar.ml:8080/getgrouplist?token=" + ur1;
+    QJsonObject ju =getuserlist(uj);
+    qDebug() << ju;
+    QJsonObject jg =getgrouplist(ug);
+    QJsonObject jc =getchannellist(uc);
 
 }
+
+
+
+
 
 SafheAsli::SafheAsli(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::SafheAsli)
 {
     ui->setupUi(this);
-    QPixmap pix(":/source/send_logo.png");
-    ui->pushButton->setIcon(pix);
-    QPixmap pix_logout(":/source/logout_icon.png");
-    ui->actionLog_out->setIcon(pix_logout);
-    ui->listWidget->addItem(QString("HI"));
-
 }
 
 SafheAsli::~SafheAsli()

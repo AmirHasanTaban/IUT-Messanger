@@ -16,71 +16,43 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label">
-     <property name="styleSheet">
-      <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;</string>
-     </property>
      <property name="text">
-      <string>username</string>
+      <string>user name</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="LineEdit_UserName">
-     <property name="styleSheet">
-      <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
-     </property>
-    </widget>
+    <widget class="QLineEdit" name="LineEdit_UserName"/>
    </item>
    <item>
     <widget class="QLabel" name="label_2">
-     <property name="styleSheet">
-      <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;</string>
-     </property>
      <property name="text">
       <string>password</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="LineEdit_Password">
-     <property name="styleSheet">
-      <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
-     </property>
-    </widget>
+    <widget class="QLineEdit" name="LineEdit_Password"/>
    </item>
    <item>
     <widget class="QLabel" name="label_3">
-     <property name="styleSheet">
-      <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;</string>
-     </property>
      <property name="text">
       <string>first name</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="LineEdit_FirstName">
-     <property name="styleSheet">
-      <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
-     </property>
-    </widget>
+    <widget class="QLineEdit" name="LineEdit_FirstName"/>
    </item>
    <item>
     <widget class="QLabel" name="label_4">
-     <property name="styleSheet">
-      <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;</string>
-     </property>
      <property name="text">
       <string>last name</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="LineEdit_LastName">
-     <property name="styleSheet">
-      <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
-     </property>
-    </widget>
+    <widget class="QLineEdit" name="LineEdit_LastName"/>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox_Signin">

@@ -16,26 +16,16 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label">
-     <property name="styleSheet">
-      <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;</string>
-     </property>
      <property name="text">
-      <string>Username</string>
+      <string>UserName</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit_Username">
-     <property name="styleSheet">
-      <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
-     </property>
-    </widget>
+    <widget class="QLineEdit" name="lineEdit_Username"/>
    </item>
    <item>
     <widget class="QLabel" name="label_2">
-     <property name="styleSheet">
-      <string notr="true">font: 700 12pt &quot;Segoe UI&quot;;</string>
-     </property>
      <property name="text">
       <string>Password</string>
      </property>
@@ -43,9 +33,6 @@
    </item>
    <item>
     <widget class="QLineEdit" name="lineEdit_Password">
-     <property name="styleSheet">
-      <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
-     </property>
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>
      </property>

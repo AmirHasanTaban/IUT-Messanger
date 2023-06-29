@@ -16,7 +16,9 @@ class SafheAsli : public QMainWindow
     Q_OBJECT
 
 public:
-    QJsonObject logout(QString URlAcc);
+
+    void logout(QString URlAcc);
+
     void setName(QJsonObject jo);
     explicit SafheAsli(QWidget *parent = nullptr);
     ~SafheAsli();
@@ -30,6 +32,7 @@ private slots:
 
 private:
     QJsonObject json;
+
     Ui::SafheAsli *ui;
 };
 

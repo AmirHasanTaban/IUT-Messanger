@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../Project_AA/dialog_signin.h"
+#include "C:/Users/Admin/Desktop/AP_Project hasan/Ap_Project/Ap_Project/Project_AA/dialog_signin.h"
 #include <QtCore/qmetatype.h>
 
 #if __has_include(<QtCore/qtmochelpers.h>)

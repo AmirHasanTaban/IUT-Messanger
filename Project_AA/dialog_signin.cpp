@@ -16,7 +16,6 @@ Dialog_Signin::Dialog_Signin(QWidget *parent) :
     ui(new Ui::Dialog_Signin)
 {
     ui->setupUi(this);
-    this->setFixedSize(500, 500);
 }
 
 Dialog_Signin::~Dialog_Signin()
