@@ -1,0 +1,13 @@
+release/channel.o
+release/dialog_login.o
+release/dialog_signin.o
+release/group.o
+release/main.o
+release/messenger.o
+release/privatechat.o
+release/safheasli.o
+release/user.o
+release/moc_dialog_login.o
+release/moc_dialog_signin.o
+release/moc_messenger.o
+release/moc_safheasli.o
