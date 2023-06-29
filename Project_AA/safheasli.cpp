@@ -14,7 +14,7 @@
 #include <QListWidgetItem>
 #include <QPixmap>
 
-QJsonObject logout1(QString URlAcc)
+void logout1(QString URlAcc)
 {
     QUrl url(URlAcc);
 
@@ -72,7 +72,7 @@ void SafheAsli::on_actionLog_out_triggered()
     QString pass11 = json["Password"].toString();
     qDebug() << json;
     QString url = "http://api.barafardayebehtar.ml:8080/logout?username=" + name11 + "&password=" + pass11;
-    QJsonObject response = logout1(url);
+    logout1(url);
     close();
 }
 
