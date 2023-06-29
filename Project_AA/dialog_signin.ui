@@ -16,8 +16,14 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
-      <string>user name</string>
+      <string>Username</string>
      </property>
     </widget>
    </item>
@@ -26,8 +32,14 @@
    </item>
    <item>
     <widget class="QLabel" name="label_2">
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
-      <string>password</string>
+      <string>Password</string>
      </property>
     </widget>
    </item>
@@ -36,8 +48,14 @@
    </item>
    <item>
     <widget class="QLabel" name="label_3">
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
-      <string>first name</string>
+      <string>First name</string>
      </property>
     </widget>
    </item>
@@ -46,8 +64,14 @@
    </item>
    <item>
     <widget class="QLabel" name="label_4">
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
-      <string>last name</string>
+      <string>Last name</string>
      </property>
     </widget>
    </item>

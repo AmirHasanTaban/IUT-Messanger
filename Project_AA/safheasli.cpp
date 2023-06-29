@@ -281,13 +281,16 @@ SafheAsli::SafheAsli(QWidget *parent) :
     ui(new Ui::SafheAsli)
 {
     ui->setupUi(this);
-    setFixedSize(800, 600);
+    setFixedSize(800, 650);
     QPixmap pix1(":/source/send_logo.png");
     ui->pushButton->setIcon(pix1);
     QPixmap pix2(":/source/logout_icon.png");
     ui->actionLog_out->setIcon(pix2);
-    QPixmap pix3(":/source/burger_icon.png");
+    QPixmap pix3(":/source/ham_icon.jpg");
     ui->menuoptions->setIcon(pix3);
+    QPixmap pix4(":/source/add_icon.png");
+    ui->menuadd->setIcon(pix4);
+
 }
 
 SafheAsli::~SafheAsli()
@@ -332,16 +335,39 @@ void SafheAsli::on_listWidget_itemClicked(QListWidgetItem *item)
 //    qDebug() << dst_username;
     QString tmp = json["token"].toString();
 
-
     QString url = "http://api.barafardayebehtar.ml:8080/getuserchats?token="+tmp;
 
     QJsonObject ans = send_request(url);
-
-
+    int num = FindNumber(ans).toInt();
+    for (int i = 0; i < num; i++)
+    {
+        int myInt = i;
+        QString qq = QString::number(myInt);
+        QString block = "block " + qq;
+        QJsonObject val = ans[block].toObject();
+        QString src_dst = val["src"].toString();
+        QString body = val["body"].toString();
+        QString message = src_dst + ":\n" + body + "\n";
+        ui->textBrowser_asli->append(message);
+    }
 
 //    if(item->text()==QString("Mammad")){
 //        ui->textBrowser_asli->setText(QString("Hello Buddy!\nHow are you?\nWhat's up?\n"));
 //    }
+
+}
+
+
+void SafheAsli::on_group_list_itemClicked(QListWidgetItem *item)
+{
+
+}
+
+
+
+
+void SafheAsli::on_channel_list_itemClicked(QListWidgetItem *item)
+{
 
 }
 

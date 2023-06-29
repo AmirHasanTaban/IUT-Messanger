@@ -37,6 +37,12 @@ private slots:
 
     void on_listWidget_itemClicked(QListWidgetItem *item);
 
+    void on_listWidget_2_itemClicked(QListWidgetItem *item);
+
+    void on_group_list_itemClicked(QListWidgetItem *item);
+
+    void on_channel_list_itemClicked(QListWidgetItem *item);
+
 private:
     QJsonObject json;
 

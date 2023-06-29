@@ -4,5 +4,9 @@
         <file>logout_icon.png</file>
         <file>send_logo.png</file>
         <file>burger_icon.png</file>
+        <file>add_icon.png</file>
+        <file>ham_icon.jpg</file>
+        <file>sky_wallpaper.png</file>
+        <file>sky.jpg.jpg</file>
     </qresource>
 </RCC>
