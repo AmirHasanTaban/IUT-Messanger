@@ -116,7 +116,6 @@ void SafheAsli::setName(QJsonObject Nam)
     QString ug = "http://api.barafardayebehtar.ml:8080/getchannellist?token=" + ur1;
     QString uc = "http://api.barafardayebehtar.ml:8080/getgrouplist?token=" + ur1;
     QJsonObject ju =getuserlist(uj);
-    qDebug() << ju;
     QJsonObject jg =getgrouplist(ug);
     QJsonObject jc =getchannellist(uc);
 
