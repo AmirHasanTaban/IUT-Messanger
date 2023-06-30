@@ -8,5 +8,15 @@
         <file>ham_icon.jpg</file>
         <file>sky_wallpaper.png</file>
         <file>sky.jpg.jpg</file>
+        <file>login.png</file>
+        <file>register2.png</file>
+        <file>register3.png</file>
+        <file>register4.png</file>
+        <file>messenger.png</file>
+        <file>back.png</file>
+        <file>cloud.png</file>
+        <file>welcome.png</file>
+        <file>send.png</file>
+        <file>back_chat.png</file>
     </qresource>
 </RCC>

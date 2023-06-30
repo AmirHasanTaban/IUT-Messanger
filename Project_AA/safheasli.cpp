@@ -25,6 +25,8 @@ QTimer *timerUserChannel = new QTimer();
 QJsonObject jsonasl, jsonU1, jsonG1, jsonC1;
 QJsonObject jsonuser, jsongroup, jsonchannel;
 
+int what_send;
+
 QJsonObject getuserlist(QString url1) {
     QNetworkAccessManager manager;
     QNetworkReply *reply = manager.get(QNetworkRequest(QUrl(url1)));
@@ -405,28 +407,6 @@ void SafheAsli::on_actionLog_out_triggered()
     close();
 }
 
-
-void SafheAsli::on_pushButton_clicked()
-{
-    QString str = ui->lineEdit_asli->text();
-    str.append("\n");
-//    QString message = QString("<span style=\"color: red;\">");
-//    message.append(str);
-//    message.append(QString("</span><br>"));
-    QString message = QString("Me:\n")+str;
-    ui->textBrowser_asli->append(message);
-//    QString dst_username;
-    QString tmp = json["token"].toString();
-    QString url = "http://api.barafardayebehtar.ml:8080/sendmessageuser?token="+tmp+"&dst="+dst_username+"&body="+str;
-    qDebug() << json["token"].toString();
-    QJsonObject ans = send_request(url);
-//    qDebug() << ans["message"] << ans["code"];
-
-    ui->lineEdit_asli->clear();
-}
-
-
-
 void SafheAsli::TYChat()
 {
 
@@ -525,6 +505,8 @@ void SafheAsli::on_listWidget_itemClicked(QListWidgetItem *item)
     ui->textBrowser_asli->clear();
     ui->lineEdit_asli->clear();
 
+    what_send = 1;
+
     dst_username = item->text();
     QString tmp = json["token"].toString();
     QString url = "http://api.barafardayebehtar.ml:8080/getuserchats?token=" + tmp + "&dst=" + dst_username;
@@ -547,6 +529,8 @@ void SafheAsli::on_group_list_itemClicked(QListWidgetItem *item)
 {
     ui->textBrowser_asli->clear();
     ui->lineEdit_asli->clear();
+
+    what_send = 2;
 
     dst_groupname = item->text();
     QString tmp = json["token"].toString();
@@ -571,6 +555,8 @@ void SafheAsli::on_channel_list_itemClicked(QListWidgetItem *item)
     ui->textBrowser_asli->clear();
     ui->lineEdit_asli->clear();
 
+    what_send = 3;
+
     dst_channelname = item->text();
     QString tmp = json["token"].toString();
     QString url = "http://api.barafardayebehtar.ml:8080/getchannelchats?token=" + tmp + "&dst=" + dst_channelname;
@@ -587,5 +573,44 @@ void SafheAsli::on_channel_list_itemClicked(QListWidgetItem *item)
 
     connect(timerUserChannel, SIGNAL(timeout()), this, SLOT(TYChannel()));
     timerUserChannel->start(5000);
+}
+
+void SafheAsli::on_pushButton_clicked()
+{
+    QString tok=json["token"].toString();
+
+
+
+    if(what_send==1)
+    {
+        QString masu=ui->lineEdit_asli->text();
+        QString urlusersend="http://api.barafardayebehtar.ml:8080/sendmessageuser?token=" + tok + "&dst=" + dst_username + "&body=" + masu;
+        ui->lineEdit_asli->clear();
+        QJsonObject masur=send_request(urlusersend);
+
+
+    }
+    if(what_send==2)
+    {
+        QString masg=ui->lineEdit_asli->text();
+        QString urlgropsend="http://api.barafardayebehtar.ml:8080/sendmessagegroup?token=%" + tok + "&dst=" + dst_groupname + "&body=" + masg;
+        ui->lineEdit_asli->clear();
+        QJsonObject masgr=send_request(urlgropsend);
+
+
+    }
+    if(what_send==3){
+        QString masc=ui->lineEdit_asli->text();
+        QString urlchanelsend="http://api.barafardayebehtar.ml:8080/sendmessagechannel?token=" + tok + "&dst=" + dst_channelname + "&body=" + masc;
+        ui->lineEdit_asli->clear();
+        QJsonObject masr=send_request(urlchanelsend);
+        ui->lineEdit_asli->clear();
+        //      if(masr["code"].toString()=="200")
+        {
+            //            er(masr);
+            //      }
+
+        }
+    }
 }
 
