@@ -17,11 +17,11 @@ class SafheAsli : public QMainWindow
 
 public:
 
-    void PrintUser(int num, QJsonObject q);
-    void PrintGroup(int num, QJsonObject q);
-    void PrintChannel(int num, QJsonObject q);
+    void PrintUser(int start, int num, QJsonObject q);
+    void PrintGroup(int start, int num, QJsonObject q);
+    void PrintChannel(int start ,int num, QJsonObject q);
 
-    void TY();
+
 
     QJsonObject send_request(QString url);
     void logout(QString URlAcc);
@@ -31,17 +31,15 @@ public:
     ~SafheAsli();
 
 private slots:
+    void TY();
+
     void on_actionLog_out_triggered();
 
     void on_pushButton_clicked();
 
     void on_listWidget_itemClicked(QListWidgetItem *item);
 
-    void on_listWidget_2_itemClicked(QListWidgetItem *item);
-
-    void on_group_list_itemClicked(QListWidgetItem *item);
-
-    void on_channel_list_itemClicked(QListWidgetItem *item);
+    void on_actionnew_group_triggered();
 
 private:
     QJsonObject json;

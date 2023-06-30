@@ -12,6 +12,7 @@ CONFIG += c++17
 
 SOURCES += \
     channel.cpp \
+    createnewgroup.cpp \
     dialog_login.cpp \
     dialog_signin.cpp \
     group.cpp \
@@ -23,6 +24,7 @@ SOURCES += \
 
 HEADERS += \
     channel.h \
+    createnewgroup.h \
     dialog_login.h \
     dialog_signin.h \
     group.h \
@@ -32,6 +34,7 @@ HEADERS += \
     user.h
 
 FORMS += \
+    createnewgroup.ui \
     dialog_login.ui \
     dialog_signin.ui \
     messenger.ui \

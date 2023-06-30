@@ -25,6 +25,7 @@ void Messenger::on_Signup_clicked()
     Dialog_Signin *d = new Dialog_Signin(this);
     connect(d, SIGNAL(errorsignup(QString)), this, SLOT(geterror(QString)));
     d->show();
+     ui->label_message->clear();
 }
 
 void Messenger::geterror(QString str)
@@ -38,5 +39,6 @@ void Messenger::on_Login_clicked()
     Dialog_login *d = new Dialog_login(this);
     connect(d, SIGNAL(errorlogin(QString)), this, SLOT(geterror(QString)));
     d->show();
+    ui->label_message->clear();
 }
 
