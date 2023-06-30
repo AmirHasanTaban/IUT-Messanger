@@ -2,6 +2,10 @@
 #include "ui_safheasli.h"
 #include "dialog_login.h"
 #include "createnewgroup.h"
+#include "createnewchannel.h"
+#include "joingroup.h"
+#include "joinchannel.h"
+#include "newchat.h""
 #include <QDebug>
 #include <QString>
 #include <QtNetwork/QNetworkAccessManager>
@@ -163,6 +167,41 @@ void SafheAsli::PrintChannel(int start, int num, QJsonObject q)
     }
 }
 
+void SafheAsli::PtintUsers(QJsonObject j1, QJsonObject j2, int Max1, int Max2)
+{
+    for (int k = 0; k < Max2; k++)
+    {
+        int number = 0;
+        QString jadid;
+
+        QString q2 = QString::number(k);
+        QString block2 = "block " + q2;
+        QJsonObject val2 = j2[block2].toObject();
+        QString name2 = val2["src"].toString();
+
+        for (int i = 0; i < Max1; i++)
+        {
+            QString q1 = QString::number(i);
+            QString block1 = "block " + q1;
+            QJsonObject val1 = j1[block1].toObject();
+            QString name1 = val1["src"].toString();
+
+            if (name2 == name1)
+            {
+                number++;
+            }
+        }
+
+        jadid = name2;
+
+        if (number == 0)
+        {
+            ui->listWidget->addItem(jadid);
+            break;
+        }
+    }
+}
+
 void SafheAsli::TY()
 {
     QString ur1 = jsonasl["token"].toString();
@@ -197,7 +236,7 @@ void SafheAsli::TY()
 
     if (number_Iuser != number_IuserFirst)
     {
-        PrintUser(number_IuserFirst, number_Iuser, ju);
+        PtintUsers(jsonU1, ju, number_IuserFirst, number_Iuser);
         jsonU1 = ju;
     }
 
@@ -210,7 +249,7 @@ void SafheAsli::TY()
     if (number_Ichanell != number_IchanellFirst)
     {
         PrintChannel(number_IchanellFirst, number_Ichanell, jc);
-        jsonU1 = ju;
+        jsonC1 = ju;
     }
 
 }
@@ -372,5 +411,37 @@ void SafheAsli::on_actionnew_group_triggered()
     CreateNewGroup *g = new CreateNewGroup();
     g->sendtoken(jsonasl["token"].toString());
     g->show();
+}
+
+
+void SafheAsli::on_actionnew_channel_triggered()
+{
+    createnewchannel *C = new createnewchannel();
+    C->sendtoken(jsonasl["token"].toString());
+    C->show();
+}
+
+
+void SafheAsli::on_actionjoin_group_triggered()
+{
+    joingroup *j = new joingroup();
+    j->sendtoken(jsonasl["token"].toString());
+    j->show();
+}
+
+
+void SafheAsli::on_actionjoin_channel_triggered()
+{
+    joinchannel *jc = new joinchannel();
+    jc->sendtoken(jsonasl["token"].toString());
+    jc->show();
+}
+
+
+void SafheAsli::on_actionnew_chat_triggered()
+{
+    newchat *n = new newchat();
+    n->sendtoken(jsonasl["token"].toString());
+    n->show();
 }
 

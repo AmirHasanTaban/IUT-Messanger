@@ -23,7 +23,7 @@ private:
     Ui::Dialog_Signin *ui;
 
 signals:
-    void errorsignup(QString);
+    void errorsignup(QString str);
 };
 
 #endif // DIALOG_SIGNIN_H

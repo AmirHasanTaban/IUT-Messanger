@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CreateNewGroup</class>
- <widget class="QDialog" name="CreateNewGroup">
+ <class>createnewchannel</class>
+ <widget class="QDialog" name="createnewchannel">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -15,24 +15,24 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="label_NameGroup">
+    <widget class="QLabel" name="label_NameChannel">
      <property name="text">
-      <string>Name Group</string>
+      <string>Name Channel</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit_NameGroup"/>
+    <widget class="QLineEdit" name="lineEdit_NameChannel"/>
    </item>
    <item>
-    <widget class="QLabel" name="label_TitleGroup">
+    <widget class="QLabel" name="label_TitleChannel">
      <property name="text">
-      <string>Title Group</string>
+      <string>Title Channel</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit_TitleGroup"/>
+    <widget class="QLineEdit" name="lineEdit_TitleChannel"/>
    </item>
    <item>
     <widget class="QPushButton" name="pushButton">
@@ -42,7 +42,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="label_error">
+    <widget class="QLabel" name="label_Error">
      <property name="text">
       <string/>
      </property>

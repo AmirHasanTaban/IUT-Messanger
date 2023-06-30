@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CreateNewGroup</class>
- <widget class="QDialog" name="CreateNewGroup">
+ <class>joingroup</class>
+ <widget class="QDialog" name="joingroup">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -23,16 +23,6 @@
    </item>
    <item>
     <widget class="QLineEdit" name="lineEdit_NameGroup"/>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_TitleGroup">
-     <property name="text">
-      <string>Title Group</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="lineEdit_TitleGroup"/>
    </item>
    <item>
     <widget class="QPushButton" name="pushButton">

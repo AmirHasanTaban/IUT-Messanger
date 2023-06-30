@@ -12,32 +12,44 @@ CONFIG += c++17
 
 SOURCES += \
     channel.cpp \
+    createnewchannel.cpp \
     createnewgroup.cpp \
     dialog_login.cpp \
     dialog_signin.cpp \
     group.cpp \
+    joinchannel.cpp \
+    joingroup.cpp \
     main.cpp \
     messenger.cpp \
+    newchat.cpp \
     privatechat.cpp \
     safheasli.cpp \
     user.cpp
 
 HEADERS += \
     channel.h \
+    createnewchannel.h \
     createnewgroup.h \
     dialog_login.h \
     dialog_signin.h \
     group.h \
+    joinchannel.h \
+    joingroup.h \
     messenger.h \
+    newchat.h \
     privatechat.h \
     safheasli.h \
     user.h
 
 FORMS += \
+    createnewchannel.ui \
     createnewgroup.ui \
     dialog_login.ui \
     dialog_signin.ui \
+    joinchannel.ui \
+    joingroup.ui \
     messenger.ui \
+    newchat.ui \
     safheasli.ui
 
 # Default rules for deployment.

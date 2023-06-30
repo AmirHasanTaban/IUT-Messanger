@@ -1,5 +1,5 @@
-#include "createnewgroup.h"
-#include "ui_createnewgroup.h"
+#include "joinchannel.h"
+#include "ui_joinchannel.h"
 #include "safheasli.h"
 #include <QDebug>
 #include <QString>
@@ -12,7 +12,7 @@
 #include <QFile>
 #include <QListWidgetItem>
 
-QJsonObject CreateGroup(QString URlAcc)
+QJsonObject Joinchan(QString URlAcc)
 {
     QUrl url(URlAcc);
 
@@ -42,31 +42,29 @@ QJsonObject CreateGroup(QString URlAcc)
     return response;
 }
 
-CreateNewGroup::CreateNewGroup(QWidget *parent) :
+joinchannel::joinchannel(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::CreateNewGroup)
+    ui(new Ui::joinchannel)
 {
     ui->setupUi(this);
 }
 
-CreateNewGroup::~CreateNewGroup()
+joinchannel::~joinchannel()
 {
     delete ui;
 }
 
-void CreateNewGroup::sendtoken(QString str)
+void joinchannel::sendtoken(QString str)
 {
     token = str;
 }
 
-
-void CreateNewGroup::on_pushButton_clicked()
+void joinchannel::on_pushButton_clicked()
 {
     ui->label_error->clear();
-    QString name = ui->lineEdit_NameGroup->text();
-    QString title = ui->lineEdit_TitleGroup->text();
-    QString urll = "http://api.barafardayebehtar.ml:8080/creategroup?token=" + token +"&group_name=" + name + "&group_title=" + title;
-    QJsonObject js = CreateGroup(urll);
+    QString name = ui->lineEdit_NameChannel->text();
+    QString urll = "http://api.barafardayebehtar.ml:8080/joinchannel?token=" + token + "&channel_name=" + name;
+    QJsonObject js = Joinchan(urll);
 
     if (js["code"].toString() == "200")
     {

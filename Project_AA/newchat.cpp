@@ -1,5 +1,5 @@
-#include "createnewgroup.h"
-#include "ui_createnewgroup.h"
+#include "newchat.h"
+#include "ui_newchat.h"
 #include "safheasli.h"
 #include <QDebug>
 #include <QString>
@@ -12,7 +12,7 @@
 #include <QFile>
 #include <QListWidgetItem>
 
-QJsonObject CreateGroup(QString URlAcc)
+QJsonObject NewCh(QString URlAcc)
 {
     QUrl url(URlAcc);
 
@@ -42,31 +42,30 @@ QJsonObject CreateGroup(QString URlAcc)
     return response;
 }
 
-CreateNewGroup::CreateNewGroup(QWidget *parent) :
+newchat::newchat(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::CreateNewGroup)
+    ui(new Ui::newchat)
 {
     ui->setupUi(this);
 }
 
-CreateNewGroup::~CreateNewGroup()
+newchat::~newchat()
 {
     delete ui;
 }
 
-void CreateNewGroup::sendtoken(QString str)
+void newchat::sendtoken(QString str)
 {
     token = str;
 }
 
-
-void CreateNewGroup::on_pushButton_clicked()
+void newchat::on_pushButton_clicked()
 {
     ui->label_error->clear();
-    QString name = ui->lineEdit_NameGroup->text();
-    QString title = ui->lineEdit_TitleGroup->text();
-    QString urll = "http://api.barafardayebehtar.ml:8080/creategroup?token=" + token +"&group_name=" + name + "&group_title=" + title;
-    QJsonObject js = CreateGroup(urll);
+    QString name = ui->lineEdit_NameUser->text();
+    QString urll = "http://api.barafardayebehtar.ml:8080/sendmessageuser?token=" + token + "&dst=" + name + "&body= ";
+
+    QJsonObject js = NewCh(urll);
 
     if (js["code"].toString() == "200")
     {

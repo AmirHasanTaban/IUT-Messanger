@@ -23,7 +23,7 @@ Dialog_Signin::~Dialog_Signin()
     delete ui;
 }
 
-QJsonObject logout(QString URlAcc)
+void logout(QString URlAcc)
 {
     QUrl url(URlAcc);
 
@@ -90,15 +90,16 @@ void Dialog_Signin::on_buttonBox_Signin_accepted()
     QString LastName = ui->LineEdit_LastName->text();
     QString URLAccount1 = "http://api.barafardayebehtar.ml:8080/signup?username=" + Name + "&password=" + Password;
     QJsonObject response = Signin(URLAccount1);
+    QString er = response["message"].toString();
     if (response["code"].toString() == "200")
     {
-        emit errorsignup(response["message"].toString());
+        emit errorsignup(er);
         QString URLAccount2 = "http://api.barafardayebehtar.ml:8080/logout?username=" + Name + "&password=" + Password;
         logout(URLAccount2);
     }
     else
     {
-        emit errorsignup(response["message"].toString());
+        emit errorsignup(er);
     }
 
 }

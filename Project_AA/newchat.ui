@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CreateNewGroup</class>
- <widget class="QDialog" name="CreateNewGroup">
+ <class>newchat</class>
+ <widget class="QDialog" name="newchat">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -15,24 +15,14 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="label_NameGroup">
+    <widget class="QLabel" name="label_NameUSer">
      <property name="text">
-      <string>Name Group</string>
+      <string>Name User</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit_NameGroup"/>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_TitleGroup">
-     <property name="text">
-      <string>Title Group</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="lineEdit_TitleGroup"/>
+    <widget class="QLineEdit" name="lineEdit_NameUser"/>
    </item>
    <item>
     <widget class="QPushButton" name="pushButton">

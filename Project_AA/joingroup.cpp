@@ -1,5 +1,5 @@
-#include "createnewgroup.h"
-#include "ui_createnewgroup.h"
+#include "joingroup.h"
+#include "ui_joingroup.h"
 #include "safheasli.h"
 #include <QDebug>
 #include <QString>
@@ -12,7 +12,7 @@
 #include <QFile>
 #include <QListWidgetItem>
 
-QJsonObject CreateGroup(QString URlAcc)
+QJsonObject Joingrou(QString URlAcc)
 {
     QUrl url(URlAcc);
 
@@ -42,31 +42,29 @@ QJsonObject CreateGroup(QString URlAcc)
     return response;
 }
 
-CreateNewGroup::CreateNewGroup(QWidget *parent) :
+joingroup::joingroup(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::CreateNewGroup)
+    ui(new Ui::joingroup)
 {
     ui->setupUi(this);
 }
 
-CreateNewGroup::~CreateNewGroup()
+joingroup::~joingroup()
 {
     delete ui;
 }
 
-void CreateNewGroup::sendtoken(QString str)
+void joingroup::sendtoken(QString str)
 {
     token = str;
 }
 
-
-void CreateNewGroup::on_pushButton_clicked()
+void joingroup::on_pushButton_clicked()
 {
     ui->label_error->clear();
     QString name = ui->lineEdit_NameGroup->text();
-    QString title = ui->lineEdit_TitleGroup->text();
-    QString urll = "http://api.barafardayebehtar.ml:8080/creategroup?token=" + token +"&group_name=" + name + "&group_title=" + title;
-    QJsonObject js = CreateGroup(urll);
+    QString urll = "http://api.barafardayebehtar.ml:8080/joingroup?token=" + token + "&group_name=" + name;
+    QJsonObject js = Joingrou(urll);
 
     if (js["code"].toString() == "200")
     {

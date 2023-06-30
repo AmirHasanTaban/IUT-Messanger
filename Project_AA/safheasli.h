@@ -20,6 +20,7 @@ public:
     void PrintUser(int start, int num, QJsonObject q);
     void PrintGroup(int start, int num, QJsonObject q);
     void PrintChannel(int start ,int num, QJsonObject q);
+    void PtintUsers(QJsonObject j1, QJsonObject j2, int start1, int start2);
 
 
 
@@ -40,6 +41,14 @@ private slots:
     void on_listWidget_itemClicked(QListWidgetItem *item);
 
     void on_actionnew_group_triggered();
+
+    void on_actionnew_channel_triggered();
+
+    void on_actionjoin_group_triggered();
+
+    void on_actionjoin_channel_triggered();
+
+    void on_actionnew_chat_triggered();
 
 private:
     QJsonObject json;

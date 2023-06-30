@@ -1,5 +1,5 @@
-#include "createnewgroup.h"
-#include "ui_createnewgroup.h"
+#include "createnewchannel.h"
+#include "ui_createnewchannel.h"
 #include "safheasli.h"
 #include <QDebug>
 #include <QString>
@@ -12,7 +12,7 @@
 #include <QFile>
 #include <QListWidgetItem>
 
-QJsonObject CreateGroup(QString URlAcc)
+QJsonObject CreateChannel(QString URlAcc)
 {
     QUrl url(URlAcc);
 
@@ -42,40 +42,40 @@ QJsonObject CreateGroup(QString URlAcc)
     return response;
 }
 
-CreateNewGroup::CreateNewGroup(QWidget *parent) :
+createnewchannel::createnewchannel(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::CreateNewGroup)
+    ui(new Ui::createnewchannel)
 {
     ui->setupUi(this);
 }
 
-CreateNewGroup::~CreateNewGroup()
+createnewchannel::~createnewchannel()
 {
     delete ui;
 }
 
-void CreateNewGroup::sendtoken(QString str)
+void createnewchannel::sendtoken(QString str)
 {
-    token = str;
+        token = str;
 }
 
 
-void CreateNewGroup::on_pushButton_clicked()
+void createnewchannel::on_pushButton_clicked()
 {
-    ui->label_error->clear();
-    QString name = ui->lineEdit_NameGroup->text();
-    QString title = ui->lineEdit_TitleGroup->text();
-    QString urll = "http://api.barafardayebehtar.ml:8080/creategroup?token=" + token +"&group_name=" + name + "&group_title=" + title;
-    QJsonObject js = CreateGroup(urll);
+        ui->label_Error->clear();
+        QString name = ui->lineEdit_NameChannel->text();
+        QString title = ui->lineEdit_TitleChannel->text();
+        QString urll = "http://api.barafardayebehtar.ml:8080/creategroup?token=" + token +"&channel_name=" + name + "&channel_title=" + title;
+        QJsonObject js = CreateChannel(urll);
 
-    if (js["code"].toString() == "200")
-    {
-        close();
-    }
-    else
-    {
-        QString mes = js["message"].toString();
-        ui->label_error->setText(mes);
-    }
+        if (js["code"].toString() == "200")
+        {
+            close();
+        }
+        else
+        {
+            QString mes = js["message"].toString();
+            ui->label_Error->setText(mes);
+        }
 }
 
