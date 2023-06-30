@@ -20,19 +20,27 @@ public:
     void PrintUser(int start, int num, QJsonObject q);
     void PrintGroup(int start, int num, QJsonObject q);
     void PrintChannel(int start ,int num, QJsonObject q);
-    void PtintUsers(QJsonObject j1, QJsonObject j2, int start1, int start2);
+    void PrintUsers(QJsonObject j1, QJsonObject j2, int start1, int start2);
 
     void PrintUserChat(int start, int num, QJsonObject q);
+    void PrintGroupChat(int start, int num, QJsonObject q);
+    void PrintChannelChat(int start, int num, QJsonObject q);
 
 
     QJsonObject send_request(QString url);
     void logout(QString URlAcc);
     QString dst_username;
+    QString dst_groupname;
+    QString dst_channelname;
     void setName(QJsonObject jo);
     explicit SafheAsli(QWidget *parent = nullptr);
     ~SafheAsli();
 
 private slots:
+
+    void TYChannel();
+
+    void TYGroup();
 
     void TYChat();
 
@@ -53,6 +61,10 @@ private slots:
     void on_actionjoin_channel_triggered();
 
     void on_actionnew_chat_triggered();
+
+    void on_group_list_itemClicked(QListWidgetItem *item);
+
+    void on_channel_list_itemClicked(QListWidgetItem *item);
 
 private:
     QJsonObject json;
