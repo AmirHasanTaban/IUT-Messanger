@@ -22,6 +22,7 @@ public:
     void PrintChannel(int start ,int num, QJsonObject q);
     void PtintUsers(QJsonObject j1, QJsonObject j2, int start1, int start2);
 
+    void PrintUserChat(int start, int num, QJsonObject q);
 
 
     QJsonObject send_request(QString url);
@@ -32,6 +33,9 @@ public:
     ~SafheAsli();
 
 private slots:
+
+    void TYChat();
+
     void TY();
 
     void on_actionLog_out_triggered();

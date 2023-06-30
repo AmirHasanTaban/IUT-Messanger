@@ -5,7 +5,7 @@
 #include "createnewchannel.h"
 #include "joingroup.h"
 #include "joinchannel.h"
-#include "newchat.h""
+#include "newchat.h"
 #include <QDebug>
 #include <QString>
 #include <QtNetwork/QNetworkAccessManager>
@@ -18,7 +18,12 @@
 #include <QListWidgetItem>
 #include <QTimer>
 
+QTimer *timerUserChat = new QTimer();
+//QTimer *timerUserGroup = new QTimer();
+//QTimer *timerUserChat = new QTimer();
+
 QJsonObject jsonasl, jsonU1, jsonG1, jsonC1;
+QJsonObject jsonuser;
 
 QJsonObject getuserlist(QString url1) {
     QNetworkAccessManager manager;
@@ -34,7 +39,6 @@ QJsonObject getuserlist(QString url1) {
         QJsonDocument d = QJsonDocument::fromJson(b);
         QJsonObject o = d.object();
         response = o;
-        qDebug() << response;
     } else {
         qDebug() << "Error: " << reply->errorString();
         return QJsonObject();
@@ -56,7 +60,6 @@ QJsonObject getgrouplist(QString url1) {
         QJsonDocument d = QJsonDocument::fromJson(b);
         QJsonObject o = d.object();
         response = o;
-        qDebug() << response;
     } else {
         qDebug() << "Error: " << reply->errorString();
         return QJsonObject();
@@ -78,7 +81,6 @@ QJsonObject getchannellist(QString url1) {
         QJsonDocument d = QJsonDocument::fromJson(b);
         QJsonObject o = d.object();
         response = o;
-        qDebug() << response;
     } else {
         qDebug() << "Error: " << reply->errorString();
         return QJsonObject();
@@ -202,6 +204,26 @@ void SafheAsli::PtintUsers(QJsonObject j1, QJsonObject j2, int Max1, int Max2)
     }
 }
 
+
+void SafheAsli::PrintUserChat(int start, int num, QJsonObject q)
+{
+    for (int i = start; i < num; i++)
+    {
+        int myInt = i;
+        QString qq = QString::number(myInt);
+        QString block = "block " + qq;
+        QJsonObject val = q[block].toObject();
+        QString date = val["date"].toString();
+        QString nam = val["src"].toString();
+        nam = nam + " ( " + date + " ) :";
+        ui->textBrowser_asli->append(nam);
+        QString mes = val["body"].toString();
+        mes = mes + "\n";
+        ui->textBrowser_asli->append(mes);
+    }
+}
+
+
 void SafheAsli::TY()
 {
     QString ur1 = jsonasl["token"].toString();
@@ -229,10 +251,6 @@ void SafheAsli::TY()
     int number_IuserFirst = number_SuserFirst.toInt();
     int number_IgroupFirst = number_SgroupFirst.toInt();
     int number_IchanellFirst = number_SchanellFirst.toInt();
-
-    qDebug() << number_IuserFirst;
-    qDebug() << number_IgroupFirst;
-    qDebug() << number_IchanellFirst;
 
     if (number_Iuser != number_IuserFirst)
     {
@@ -320,9 +338,6 @@ void SafheAsli::setName(QJsonObject Nam)
 }
 
 
-
-
-
 SafheAsli::SafheAsli(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::SafheAsli)
@@ -373,36 +388,46 @@ void SafheAsli::on_pushButton_clicked()
 }
 
 
+void SafheAsli::TYChat()
+{
+
+    QString tmp1 = json["token"].toString();
+    QString url1 = "http://api.barafardayebehtar.ml:8080/getuserchats?token=" + tmp1 + "&dst=" + dst_username;
+    QJsonObject jj1 = send_request(url1);
+
+    int num2 = FindNumber(jj1).toInt();
+    int num1 = FindNumber(jsonuser).toInt();
+
+    if (num1 != num2)
+    {
+        PrintUserChat(num1, num2, jj1);
+        jsonuser = jj1;
+    }
+}
+
+
 void SafheAsli::on_listWidget_itemClicked(QListWidgetItem *item)
 {
+
+    ui->textBrowser_asli->clear();
+    ui->lineEdit_asli->clear();
+
     dst_username = item->text();
-//    qDebug() << dst_username;
     QString tmp = json["token"].toString();
+    QString url = "http://api.barafardayebehtar.ml:8080/getuserchats?token=" + tmp + "&dst=" + dst_username;
+    QJsonObject jj = send_request(url);
 
-
-    QString url = "http://api.barafardayebehtar.ml:8080/getuserchats?token="+tmp;
-
-    QJsonObject ans = send_request(url);
-
-    int num = FindNumber(ans).toInt();
-    for (int i = 0; i < num; i++)
-    {
-        int myInt = i;
-        QString qq = QString::number(myInt);
-        QString block = "block " + qq;
-        QJsonObject val = ans[block].toObject();
-        QString src_dst = val["src"].toString();
-        QString body = val["body"].toString();
-        QString message = src_dst + ":\n" + body + "\n";
-        ui->textBrowser_asli->append(message);
+    for (QString& key : jsonuser.keys()) {
+        jsonuser.remove(key);
     }
 
+    jsonuser = jj;
+    int num = FindNumber(jj).toInt();
 
+    PrintUserChat(1, num, jsonuser);
 
-//    if(item->text()==QString("Mammad")){
-//        ui->textBrowser_asli->setText(QString("Hello Buddy!\nHow are you?\nWhat's up?\n"));
-//    }
-
+    connect(timerUserChat, SIGNAL(timeout()), this, SLOT(TYChat()));
+    timerUserChat->start(5000);
 }
 
 
