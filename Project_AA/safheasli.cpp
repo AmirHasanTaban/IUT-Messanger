@@ -505,6 +505,9 @@ void SafheAsli::on_listWidget_itemClicked(QListWidgetItem *item)
     ui->textBrowser_asli->clear();
     ui->lineEdit_asli->clear();
 
+    timerUserGroup->stop();
+    timerUserChannel->stop();
+
     what_send = 1;
 
     dst_username = item->text();
@@ -530,6 +533,9 @@ void SafheAsli::on_group_list_itemClicked(QListWidgetItem *item)
     ui->textBrowser_asli->clear();
     ui->lineEdit_asli->clear();
 
+    timerUserChat->stop();
+    timerUserChannel->stop();
+
     what_send = 2;
 
     dst_groupname = item->text();
@@ -554,6 +560,9 @@ void SafheAsli::on_channel_list_itemClicked(QListWidgetItem *item)
 {
     ui->textBrowser_asli->clear();
     ui->lineEdit_asli->clear();
+
+    timerUserChat->stop();
+    timerUserGroup->stop();
 
     what_send = 3;
 
@@ -593,7 +602,7 @@ void SafheAsli::on_pushButton_clicked()
     if(what_send==2)
     {
         QString masg=ui->lineEdit_asli->text();
-        QString urlgropsend="http://api.barafardayebehtar.ml:8080/sendmessagegroup?token=%" + tok + "&dst=" + dst_groupname + "&body=" + masg;
+        QString urlgropsend="http://api.barafardayebehtar.ml:8080/sendmessagegroup?token=" + tok + "&dst=" + dst_groupname + "&body=" + masg;
         ui->lineEdit_asli->clear();
         QJsonObject masgr=send_request(urlgropsend);
 
